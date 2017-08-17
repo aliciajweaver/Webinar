@@ -25,6 +25,7 @@
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => $("#errors").text(e.message));
+    window.location.href="https://appr.tc/"
 
   });
 
@@ -38,6 +39,7 @@
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => $("#errors").text(e.message));
+    window.location.href="https://appr.tc/"
   });
 
   btnLogout.addEventListener('click', e => {
