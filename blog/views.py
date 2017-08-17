@@ -7,3 +7,5 @@ def about(request):
     return render(request, 'blog/about.html', {})
 def videos(request):
     return render(request, 'blog/videos.html', {})
+def auth2(request):
+    return render(request, 'blog/auth2.html', {})

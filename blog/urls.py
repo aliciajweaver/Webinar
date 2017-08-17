@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'index', views.index, name='index'),
     url(r'about', views.about, name='about'),
     url(r'videos', views.videos, name='videos'),
+    url(r'auth2', views.auth2, name='auth2'),
 ]
