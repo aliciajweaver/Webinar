@@ -25,7 +25,6 @@
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => $("#errors").text(e.message));
-    window.location.href="https://appr.tc/"
 
   });
 
@@ -39,7 +38,6 @@
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => $("#errors").text(e.message));
-    window.location.href="https://appr.tc/"
   });
 
   btnLogout.addEventListener('click', e => {
@@ -50,6 +48,7 @@
   // Add logout event
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
+      window.location.href="https://appr.tc/"
       console.log(firebaseUser);
       console.log("blah");
       $("#username").text(firebaseUser.email);
@@ -61,5 +60,9 @@
       btnLogout.classList.add('hide');
     }
   });
+
+  window.onunload = function () {
+      firebase.auth().signOut();
+  }
 
 }());
