@@ -38,6 +38,7 @@
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => $("#errors").text(e.message));
+
   });
 
   btnLogout.addEventListener('click', e => {
@@ -65,4 +66,11 @@
       firebase.auth().signOut();
   }
 
+  var user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function() {
+  // Email sent.
+  }).catch(function(error) {
+  // An error happened.
+});
 }());
